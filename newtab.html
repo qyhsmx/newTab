@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新标签页</title>
+    <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-container">
+            <select id="search-engine">
+                <option value="google">Google</option>
+                <option value="bing">Bing</option>
+                <option value="baidu">百度</option>
+            </select>
+            <input type="text" id="search-input" placeholder="输入搜索内容..." autocomplete="off">
+            <button id="search-button">搜索</button>
+        </div>
+        <button id="settings-button">设置</button>
+    </div>
+    <button id="change-bing-wallpaper" class="hidden">更换壁纸</button>
+    <div id="settings-panel" class="settings-panel">
+        <button id="close-settings">关闭</button>
+        <h2>设置</h2>
+        <div class="setting-group">
+            <h3>背景设置</h3>
+            <div>
+                <input type="radio" id="use-gradient" name="background-type" value="gradient" checked>
+                <label for="use-gradient">使用渐变色</label>
+            </div>
+            <div id="gradient-settings">
+                <label for="gradient-start">渐变开始颜色:</label>
+                <input type="color" id="gradient-start" value="#ff7e5f">
+                <label for="gradient-end">渐变结束颜色:</label>
+                <input type="color" id="gradient-end" value="#feb47b">
+            </div>
+            <div>
+                <input type="radio" id="use-custom-image" name="background-type" value="custom">
+                <label for="use-custom-image">使用自定义图片</label>
+            </div>
+            <div id="custom-image-settings">
+                <label for="background-image">背景图片 URL:</label>
+                <input type="text" id="background-image">
+            </div>
+            <div>
+                <input type="radio" id="use-bing-wallpaper" name="background-type" value="bing">
+                <label for="use-bing-wallpaper">使用Bing每日壁纸</label>
+            </div>
+        </div>
+        <div class="setting-group">
+            <h3>搜索引擎设置</h3>
+            <div id="search-engines"></div>
+            <button id="add-search-engine">添加搜索引擎</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+    <script src="newtab.js"></script>
+</body>
+</html>
